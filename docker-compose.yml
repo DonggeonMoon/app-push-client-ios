@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+    master-node:
+        image: ubuntu:20.04
+        volumes:
+        - ./volume/master-node:/data
+        stdin_open: true
+        tty: true
+        networks: 
+        - nodes
+    worker-node1:
+        image: ubuntu:20.04
+        volumes:
+        - ./volume/worker-node1:/data
+        stdin_open: true
+        tty: true
+        networks: 
+        - nodes
+    worker-node2:
+        image: ubuntu:20.04
+        volumes:
+        - ./volume/worker-node2:/data
+        stdin_open: true
+        tty: true
+        networks: 
+        - nodes
+    worker-node3:
+        image: ubuntu:20.04
+        volumes:
+        - ./volume/worker-node3:/data
+        stdin_open: true
+        tty: true
+        networks: 
+        - nodes
+    worker-node4:
+        image: ubuntu:20.04
+        volumes:
+        - ./volume/worker-node4:/data
+        stdin_open: true
+        tty: true
+        networks: 
+        - nodes
+
+networks:
+  nodes:
+    driver: driver
